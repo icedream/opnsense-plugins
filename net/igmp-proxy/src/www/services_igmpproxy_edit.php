@@ -159,9 +159,9 @@ include("head.inc");
                       <td>
                         <select class="selectpicker" name="ifname" id="ifname" >
 <?php
-                        foreach (get_configured_interface_with_descr() as $ifnam => $ifdescr):?>
+                        foreach (legacy_config_get_interfaces(array('enable' => true)) as $ifnam => $ifdetail):?>
                           <option value="<?=$ifnam;?>" <?=$ifnam == $pconfig['ifname'] ? "selected=\"selected\"" :"";?>>
-                            <?=htmlspecialchars($ifdescr);?>
+                            <?=htmlspecialchars($ifdetail['descr']);?>
                           </option>
 
 <?php
